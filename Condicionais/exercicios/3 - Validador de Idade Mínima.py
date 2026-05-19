@@ -3,7 +3,7 @@
 idade = int(input('Digite sua idade: '))
 
 if idade >= 15:
-    print('Você pode participar do evento!')
+    print(f'Você tem {idade} anos! Você pode participar do evento!')
 
-if idade < 15:
-    print('Você não pode participar do evento!')
+else:
+    print(f'Você tem {idade} anos. Infelizmente não pode participar do evento!')

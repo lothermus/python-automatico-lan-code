@@ -13,6 +13,7 @@ avaliacao = int(input('Digite a nota do filme: '))
 if avaliacao >= 9:
     print('Excelente!')
 
+# O ELIF é utilizado para fazer uma validação além do IF. Que se o IF não for True, ele tenta a próxima, e por aí vai.
 elif avaliacao >= 7:
     print('Muito bom!')
 
