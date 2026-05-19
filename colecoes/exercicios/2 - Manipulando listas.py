@@ -32,4 +32,5 @@ livros[0] = 'Go'
 print(livros)
 print('----------')
 
+print('Fazendo a contagem de quantos itens possuem na lista: ')
 print(f'A lista tem um tamanho total de: {len((livros))} itens.')
