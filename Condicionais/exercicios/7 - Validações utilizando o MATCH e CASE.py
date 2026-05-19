@@ -16,7 +16,7 @@ match menu:
         print('A opção pedida foi Sushi!')
     case 3:
         print('A opção pedida foi Salada!')
-    case _:
+    case _: #Aqui mostra se o usuário escolher uma opção inválida, além das 3 apresentadas.
         print('Opção inválida!')
 
     
