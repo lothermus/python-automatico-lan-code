@@ -8,4 +8,4 @@ resultado_sub = num1 - num2
 resultado_mult = num1 * num2
 resultado_div = num1 / num2
 
-print(f'A soma, subtração, multiplicação e divisão desses números é: Soma: {resultado_soma}, Subtração: {resultado_sub}, Multiplicação: {resultado_mult} e Divisão: {resultado_div}')
+print(f'A soma dos números é: {resultado_soma}, a subtração é: {resultado_sub}, a multiplicação é: {resultado_mult}, e a divisão é: {resultado_div}')
