@@ -5,3 +5,5 @@ produtos = {
 }
 
 print(f'Ainda restam {produtos['estoque']} unidades do produto!')
+
+print(f'O valor do {produtos['nome']} é de {produtos['preco']} reais!')
