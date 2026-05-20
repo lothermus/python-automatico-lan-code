@@ -6,14 +6,15 @@
 
 credenciais = {
     'usuario': 'wash',
-    'senha': '1234'
+    'senha': 1234
 }
 
-login = input('Digite aqui seu login: ').lower()
-password = (input('Digite aqui sua senha: '))
+login = {
+    'usuario': input('Digite seu usuário: ').lower(),
+    'senha': int(input('Digite sua senha: '))
+}
 
-if login == credenciais['usuario'] and password == credenciais['senha']:
-    print('Login bem-sucedido')
-
+if login ['usuario'] == credenciais ['usuario'] and login['senha'] == credenciais ['senha']:
+    print('Usuário logado')
 else:
-    print('Usuário ou senha incorretos')
+    print('Credenciais inválidas, tenta novamente!')
