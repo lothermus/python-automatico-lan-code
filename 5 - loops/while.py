@@ -20,8 +20,7 @@ frutas = ['maçã', 'melancia', 'pessêgo', 'uva']
 for fruta in frutas:
     print(f'Fruta atual: {fruta}')
 
-
-exo = [ 'membro 1', 'membro 2', 'membro 3']
-print(f'Os membros do Exo são: ')
-for membro in exo:
-    print(f'{membro}')
+for numero in range(1, 11):
+    if numero % 2 == 0:
+        continue
+    print(f'Número: {numero}')
