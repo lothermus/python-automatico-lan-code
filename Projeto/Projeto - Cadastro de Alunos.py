@@ -15,19 +15,17 @@ while True:
                 'idade': '',
                 'nota': ''
                 }
-                nome_aluno = input('Digite o nome do aluno a ser adicionado: ')
+                nome_aluno = input('Digite o nome do aluno a ser adicionado: ').lower()
                 aluno['nome'] = nome_aluno 
 
                 idade_aluno = input('Digite a idade do aluno: ')
                 aluno['idade'] = idade_aluno
 
                 nota_aluno = input('Digite a nota do aluno: ')
-                aluno['nota'] = nota_aluno
+                aluno['nota'] = float(nota_aluno)
 
                 alunos.append(aluno)
 
-                print(f'\nO aluno foi adicionado. Seguem os dados:')
-                print(aluno)
                 continuar = input('Você quer cadastrar outro aluno? S/N: ').lower()
                 if continuar != 's':
                     break
@@ -37,17 +35,73 @@ while True:
 
             else:
                 for n in alunos:
-                    print(f'Os alunos até agora são: Nome: {n['nome']} | Idade: {n['idade']}, Nota: {n['nota']}')
-
+                    print(f'Os alunos até agora são: Nome: {n["nome"].capitalize()} | Idade: {n["idade"]} anos, Nota: {n["nota"]}')
         case 3:
             while True:
-                remove = input('Qual aluno você quer remover?: ').lower()
-                if remove in alunos['nome']:
-                    alunos.remove(remove)
+
+                busca = input('Qual o nome do aluno que gostaria de buscar?: ').lower()
+
+                encontrado = False
+
+                for aluno in alunos:
+                    if busca == aluno['nome'].lower():
+                        encontrado = True
+                        break
+                        
+                if encontrado:
+                    print(f'O aluno {busca.capitalize()} está presente na lista de alunos!')
+                else: 
+                    print('Não existe esse aluno na lista de alunos.')
+
+                busca_cont = input('Gostaria de buscar outro aluno? S/N: ').lower()
+                if busca_cont != 's':
+                    break
+
+        case 4:
+            while True:
+
+                remove = (input('Qual aluno você quer remover?: ')).lower()
+
+                pesq = False
+
+                for aluno in alunos:
+
+                    if remove == aluno['nome'].lower():
+                        alunos.remove(aluno)
+                        pesq = True
+
+                        print('Aluno removido.')
+
+                        break
+
+                else:
+                    print('Não existe esse aluno na lista de alunos.')
                 
                 pergunta = input('Gostaria de remover outro aluno? S/N: ').lower()
+
                 if pergunta != 's':
                     break
-            
+        
+        case 5:
+
+            if not alunos:
+                print('Não há alunos cadastrados.')
+
+            else:
+
+                print('O total de notas cadastradas no sistema é: ')
+
+                for aluno in alunos:
+                    print(aluno['nota'])
+
+                soma_notas = 0
+
+                for aluno in alunos:
+                    soma_notas += aluno['nota']
+
+                media = soma_notas / len(alunos)
+
+                print(f'A soma de todas notas é: {soma_notas} e a média de todas as notas é: {media:2f}')
+
         case _:
             break
