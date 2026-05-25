@@ -6,7 +6,6 @@ while True:
     inicio = int(input('Seja bem-vindo! Selecione uma opção: \n1.Adicionar Aluno\n2.Listar todos os Alunos\n3.Buscar Aluno pelo nome\n4.Remover Aluno\n5.Mostrar média geral das notas\n6.Sair: '))
 
 
-
     match inicio:
         case 1:
             while True:
@@ -21,8 +20,13 @@ while True:
                 idade_aluno = input('Digite a idade do aluno: ')
                 aluno['idade'] = idade_aluno
 
-                nota_aluno = input('Digite a nota do aluno: ')
-                aluno['nota'] = float(nota_aluno)
+                while True: 
+                    nota_aluno = float(input('Digite a nota do aluno: '))
+                    if nota_aluno <= 10:
+                        aluno['nota'] = float(nota_aluno)
+                        break
+                    else:
+                        print('A nota precisa estar entre 0 e 10!')
 
                 alunos.append(aluno)
 
@@ -103,5 +107,9 @@ while True:
 
                 print(f'A soma de todas notas é: {soma_notas} e a média de todas as notas é: {media:2f}')
 
-        case _:
+        case 6:
+            print('Você saiu.')
             break
+
+        case _:
+            print('Digite uma opção válida!')
